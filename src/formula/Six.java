@@ -8,11 +8,12 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.TreeMap;
+import java.util.Vector;
 
 /**
  *
  */
-public class six {
+public class Six {
     public enum Type {
         TYPE_1("韶山1,3,4型", "2.25", "0.0190", "0.000320"),
         TYPE_2("韶山7型", "1.40", "0.0038", "0.000348"),
@@ -65,6 +66,15 @@ public class six {
                 modelChoices.append("\n");
             }
             return modelChoices.toString();
+        }
+        
+        public static Vector<String> getModelNameList() {
+        	Vector<String> nameList = new Vector<String>();
+        	Iterator<Entry<Integer, Type>> typeItor = types.entrySet().iterator();
+            while (typeItor.hasNext()) {
+            	nameList.add(typeItor.next().getValue().getModelName());
+            }
+            return nameList;
         }
         
         public static Type fromVaule(int value) {
