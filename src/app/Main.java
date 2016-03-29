@@ -568,7 +568,6 @@ public class Main {
 		
 		JPanel panel = new JPanel();
 		panel.setBorder(new TitledBorder(null, "\u673A\u8F66\u7279\u6027\u53C2\u6570", TitledBorder.LEADING, TitledBorder.TOP, null, null));
-		panel.setLayout(null);
 		GridBagConstraints constraints_3 = new GridBagConstraints();
 		constraints_3.gridx = 16;
 		constraints_3.gridy = 4;
@@ -576,34 +575,59 @@ public class Main {
 		constraints_3.gridheight = 10;
 		constraints_3.fill = GridBagConstraints.BOTH;
 		internalFrame.getContentPane().add(panel, constraints_3);
+		GridBagLayout gbl_panel = new GridBagLayout();
+		gbl_panel.columnWidths = new int[]{117, 0};
+		gbl_panel.rowHeights = new int[]{60, 60, 60, 60, 60, 0};
+		gbl_panel.columnWeights = new double[]{0.0, Double.MIN_VALUE};
+		gbl_panel.rowWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		panel.setLayout(gbl_panel);
 		
 		JButton btnNewButton_1 = new JButton("牵引特性曲线");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton_1.setBounds(6, 27, 117, 60);
-		panel.add(btnNewButton_1);
+		GridBagConstraints gbc_btnNewButton_1 = new GridBagConstraints();
+		gbc_btnNewButton_1.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_1.insets = new Insets(0, 0, 5, 0);
+		gbc_btnNewButton_1.gridx = 0;
+		gbc_btnNewButton_1.gridy = 0;
+		panel.add(btnNewButton_1, gbc_btnNewButton_1);
 		
 		JButton btnNewButton_2 = new JButton("动力制动特性曲线");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btnNewButton_2.setBounds(6, 91, 117, 60);
-		panel.add(btnNewButton_2);
+		GridBagConstraints gbc_btnNewButton_2 = new GridBagConstraints();
+		gbc_btnNewButton_2.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_2.insets = new Insets(0, 0, 5, 0);
+		gbc_btnNewButton_2.gridx = 0;
+		gbc_btnNewButton_2.gridy = 1;
+		panel.add(btnNewButton_2, gbc_btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("牵引能耗曲线");
-		btnNewButton_3.setBounds(6, 163, 117, 60);
-		panel.add(btnNewButton_3);
+		GridBagConstraints gbc_btnNewButton_3 = new GridBagConstraints();
+		gbc_btnNewButton_3.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_3.insets = new Insets(0, 0, 5, 0);
+		gbc_btnNewButton_3.gridx = 0;
+		gbc_btnNewButton_3.gridy = 2;
+		panel.add(btnNewButton_3, gbc_btnNewButton_3);
 		
 		JButton btnNewButton_4 = new JButton("动力制动能耗曲线");
-		btnNewButton_4.setBounds(6, 226, 117, 60);
-		panel.add(btnNewButton_4);
+		GridBagConstraints gbc_btnNewButton_4 = new GridBagConstraints();
+		gbc_btnNewButton_4.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_4.insets = new Insets(0, 0, 5, 0);
+		gbc_btnNewButton_4.gridx = 0;
+		gbc_btnNewButton_4.gridy = 3;
+		panel.add(btnNewButton_4, gbc_btnNewButton_4);
 		
 		JButton btnNewButton_5 = new JButton("重建曲线文件");
-		btnNewButton_5.setBounds(6, 289, 117, 60);
-		panel.add(btnNewButton_5);
+		GridBagConstraints gbc_btnNewButton_5 = new GridBagConstraints();
+		gbc_btnNewButton_5.fill = GridBagConstraints.BOTH;
+		gbc_btnNewButton_5.gridx = 0;
+		gbc_btnNewButton_5.gridy = 4;
+		panel.add(btnNewButton_5, gbc_btnNewButton_5);
 
 		
 	}
