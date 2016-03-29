@@ -26,7 +26,7 @@ import javax.swing.JTextField;
 import javax.swing.JToolBar;
 import javax.swing.border.LineBorder;
 
-import formula.Six;
+import app.formula.Six;
 import javax.swing.JRadioButton;
 import javax.swing.border.TitledBorder;
 

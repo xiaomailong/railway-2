@@ -1,7 +1,7 @@
 /**
  * 
  */
-package formula;
+package app.formula;
 
 import java.math.BigDecimal;
 import java.util.Iterator;
