@@ -22,17 +22,20 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.JToolBar;
+import javax.swing.WindowConstants;
 import javax.swing.border.LineBorder;
+import javax.swing.border.TitledBorder;
 
 import app.formula.Six;
-import javax.swing.JRadioButton;
-import javax.swing.border.TitledBorder;
 
 public class Main {
 
 	private JFrame frame;
+	private JDesktopPane desktopPane;
+	private JInternalFrame charInternalFrame;
 	private JInternalFrame internalFrame;
 	private JTextField textField;
 	private JTextField textField_1;
@@ -57,7 +60,8 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
-			public void run() {
+			@Override
+            public void run() {
 				try {
 					Main window = new Main();
 					window.frame.setVisible(true);
@@ -111,6 +115,24 @@ public class Main {
 		JButton railBtn = new JButton("");
 		toolBar.add(railBtn);
 		railBtn.setIcon(new ImageIcon(Main.class.getResource("/icon/rail.png")));
+		railBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (charInternalFrame == null) {
+                    double[][] data = {{1.0, 500.2},{5.0, 694.1},{4.0, 100.0},{12.5, 734.4},{17.3, 453.2},{21.2, 500.2},{21.9, 600},{25.6, 734.4},{30.0, 453.2}};
+                    JPanel chartPanel = ChartUtil.drawChartPanel(data, "XY Series Demo", "X", "Y");
+                    charInternalFrame = new JInternalFrame("机车类型维护", true, true, true, true);
+                    charInternalFrame.setBounds(20, 20, 860, 600);
+                    desktopPane.add(charInternalFrame);
+                    charInternalFrame.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
+                    charInternalFrame.setVisible(true);
+                    charInternalFrame.getContentPane().add(chartPanel);
+                } else {
+                    charInternalFrame.show();
+                    charInternalFrame.toFront();
+                }
+            }
+        });
 		
 		JButton saveBtn = new JButton("");
 		toolBar.add(saveBtn);
@@ -120,7 +142,8 @@ public class Main {
 		JButton pauseBtn = new JButton("");
 		toolBar.add(pauseBtn);
 		pauseBtn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			@Override
+            public void actionPerformed(ActionEvent e) {
 			}
 		});
 		pauseBtn.setIcon(new ImageIcon(Main.class.getResource("/icon/pause.png")));
@@ -132,12 +155,13 @@ public class Main {
 		JButton stopBtn = new JButton("");
 		toolBar.add(stopBtn);
 		stopBtn.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			@Override
+            public void actionPerformed(ActionEvent e) {
 			}
 		});
 		stopBtn.setIcon(new ImageIcon(Main.class.getResource("/icon/stop.png")));
 		
-		JDesktopPane desktopPane = new JDesktopPane();
+		desktopPane = new JDesktopPane();
 		frame.getContentPane().add(desktopPane, BorderLayout.CENTER);
 		
 		internalFrame = new JInternalFrame("机车类型维护", true, true, true, true);
@@ -151,38 +175,38 @@ public class Main {
 		gridbag.columnWeights = new double[]{0.0, 1.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
 		internalContainer.setLayout(gridbag);
 						
-						JPanel panel_6 = new JPanel();
-						panel_6.setLayout(null);
-						GridBagConstraints gbc_panel_6 = new GridBagConstraints();
-						gbc_panel_6.gridheight = 3;
-						gbc_panel_6.gridwidth = 7;
-						gbc_panel_6.insets = new Insets(0, 0, 5, 5);
-						gbc_panel_6.fill = GridBagConstraints.BOTH;
-						gbc_panel_6.gridx = 1;
-						gbc_panel_6.gridy = 0;
-						internalFrame.getContentPane().add(panel_6, gbc_panel_6);
-						JLabel label = new JLabel("机车类型名");
-						label.setBounds(21, 13, 65, 16);
-						panel_6.add(label);
-				JComboBox<String> comboBox = new JComboBox<String>(Six.Type.getModelNameList());
-				comboBox.setBounds(98, 9, 165, 27);
-				panel_6.add(comboBox);
-				comboBox.setFocusable(false);
-				comboBox.setOpaque(false);
-				comboBox.setBackground(Color.white);
-				
-						JButton btnNewButton = new JButton("修改机车名称");
-						btnNewButton.setBounds(86, 37, 122, 29);
-						panel_6.add(btnNewButton);
-						
-						JLabel label_1 = new JLabel("参数数据存盘文件名");
-						label_1.setBounds(5, 78, 117, 16);
-						panel_6.add(label_1);
-						
-						textField = new JTextField();
-						textField.setBounds(134, 72, 168, 28);
-						panel_6.add(textField);
-						textField.setColumns(10);
+        JPanel panel_6 = new JPanel();
+        panel_6.setLayout(null);
+        GridBagConstraints gbc_panel_6 = new GridBagConstraints();
+        gbc_panel_6.gridheight = 3;
+        gbc_panel_6.gridwidth = 7;
+        gbc_panel_6.insets = new Insets(0, 0, 5, 5);
+        gbc_panel_6.fill = GridBagConstraints.BOTH;
+        gbc_panel_6.gridx = 1;
+        gbc_panel_6.gridy = 0;
+        internalFrame.getContentPane().add(panel_6, gbc_panel_6);
+        JLabel label = new JLabel("机车类型名");
+        label.setBounds(21, 13, 65, 16);
+        panel_6.add(label);
+        JComboBox<String> comboBox = new JComboBox<String>(Six.Type.getModelNameList());
+        comboBox.setBounds(98, 9, 165, 27);
+        panel_6.add(comboBox);
+        comboBox.setFocusable(false);
+        comboBox.setOpaque(false);
+        comboBox.setBackground(Color.white);
+
+        JButton btnNewButton = new JButton("修改机车名称");
+        btnNewButton.setBounds(86, 37, 122, 29);
+        panel_6.add(btnNewButton);
+
+        JLabel label_1 = new JLabel("参数数据存盘文件名");
+        label_1.setBounds(5, 78, 117, 16);
+        panel_6.add(label_1);
+
+        textField = new JTextField();
+        textField.setBounds(134, 72, 168, 28);
+        panel_6.add(textField);
+        textField.setColumns(10);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new TitledBorder(null, "\u673A\u8F66\u63CF\u8FF0\u53C2\u6570", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -584,7 +608,8 @@ public class Main {
 		
 		JButton btnNewButton_1 = new JButton("牵引特性曲线");
 		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			@Override
+            public void actionPerformed(ActionEvent e) {
 			}
 		});
 		GridBagConstraints gbc_btnNewButton_1 = new GridBagConstraints();
@@ -596,7 +621,8 @@ public class Main {
 		
 		JButton btnNewButton_2 = new JButton("动力制动特性曲线");
 		btnNewButton_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			@Override
+            public void actionPerformed(ActionEvent e) {
 			}
 		});
 		GridBagConstraints gbc_btnNewButton_2 = new GridBagConstraints();
