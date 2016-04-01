@@ -36,6 +36,7 @@ public class Main {
 	private JFrame frame;
 	private JDesktopPane desktopPane;
 	private JInternalFrame charInternalFrame;
+    private JInternalFrame char2InternalFrame;
 	private JInternalFrame internalFrame;
 	private JTextField textField;
 	private JTextField textField_1;
@@ -84,7 +85,7 @@ public class Main {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 900, 700);
+		frame.setBounds(100, 100, 900, 800);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JMenuBar menuBar = new JMenuBar();
@@ -120,7 +121,7 @@ public class Main {
             public void actionPerformed(ActionEvent e) {
                 if (charInternalFrame == null) {
                     double[][] data = {{1.0, 500.2},{5.0, 694.1},{4.0, 100.0},{12.5, 734.4},{17.3, 453.2},{21.2, 500.2},{21.9, 600},{25.6, 734.4},{30.0, 453.2}};
-                    JPanel chartPanel = ChartUtil.drawChartPanel(data, "XY Series Demo", "X", "Y");
+                    JPanel chartPanel = ChartUtil.createXYLineChartPanel(data, "XY Series Demo", "X", "Y");
                     charInternalFrame = new JInternalFrame("机车类型维护", true, true, true, true);
                     charInternalFrame.setBounds(20, 20, 860, 600);
                     desktopPane.add(charInternalFrame);
@@ -151,6 +152,25 @@ public class Main {
 		JButton playBtn = new JButton("");
 		toolBar.add(playBtn);
 		playBtn.setIcon(new ImageIcon(Main.class.getResource("/icon/play.png")));
+		playBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (char2InternalFrame == null) {
+                    double[][] data = {{1.0, 500.2},{5.0, 694.1},{4.0, 100.0},{12.5, 734.4},{17.3, 453.2},{21.2, 500.2},{21.9, 600},{25.6, 734.4},{30.0, 453.2}};
+                    double[][] data2 = {{1.0, 600.2},{5.0, 794.1},{4.0, 200.0},{12.5, 834.4},{17.3, 553.2},{21.2, 600.2},{21.9, 700},{25.6, 834.4},{30.0, 553.2}};
+                    JPanel chartPanel = ChartUtil.createMultiXYLineChartPanel(new double[][][]{data, data2}, "XY Series Demo", "X", "Y");
+                    char2InternalFrame = new JInternalFrame("机车类型维护", true, true, true, true);
+                    char2InternalFrame.setBounds(20, 20, 860, 600);
+                    desktopPane.add(char2InternalFrame);
+                    char2InternalFrame.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
+                    char2InternalFrame.setVisible(true);
+                    char2InternalFrame.getContentPane().add(chartPanel);
+                } else {
+                    char2InternalFrame.show();
+                    char2InternalFrame.toFront();
+                }
+            }
+        });
 		
 		JButton stopBtn = new JButton("");
 		toolBar.add(stopBtn);
