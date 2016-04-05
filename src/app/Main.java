@@ -64,25 +64,11 @@ public class Main {
 		JMenuBar menuBar = new JMenuBar();
 		frame.setJMenuBar(menuBar);
 		
-		JMenu menu = new JMenu("退出");
-		menuBar.add(menu);
-		
-		JMenuItem menuItem = new JMenuItem("退出");
-		menuItem.addActionListener(new ActionListener() {
-
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.exit(0);
-            }
-		    
-		});
-		menu.add(menuItem);
-		
-		JMenu menu_1 = new JMenu("耗电量计算");
+		JMenu menu_1 = new JMenu("数据准备");
 		menuBar.add(menu_1);
 		
-		JMenuItem menuItem_1 = new JMenuItem("电力机车");
-		menuItem_1.addActionListener(new ActionListener() {
+		JMenuItem menuItem_1_1 = new JMenuItem("电力机车耗电量");
+		menuItem_1_1.addActionListener(new ActionListener() {
 
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -97,13 +83,42 @@ public class Main {
             }
             
         });
-		menu_1.add(menuItem_1);
+		menu_1.add(menuItem_1_1);
+		
+		JMenuItem menuItem_1_2 = new JMenuItem("内燃机车耗电量");
+		menu_1.add(menuItem_1_2);
 		
 		JMenu menu_2 = new JMenu("牵引计算");
 		menuBar.add(menu_2);
 		
-		JMenuItem menuItem_2 = new JMenuItem("电力机车");
-		menu_2.add(menuItem_2);
+		JMenuItem menuItem_2_1 = new JMenuItem("电力机车");
+		menu_2.add(menuItem_2_1);
+
+		JMenuItem menuItem_2_2 = new JMenuItem("内燃机车");
+		menu_2.add(menuItem_2_2);
+		
+		JMenu menu_3 = new JMenu("结果数据");
+		menuBar.add(menu_3);
+		
+		JMenuItem menuItem_3_1 = new JMenuItem("电力机车");
+		menu_3.add(menuItem_3_1);
+
+		JMenuItem menuItem_3_2 = new JMenuItem("内燃机车");
+		menu_3.add(menuItem_3_2);
+		
+		JMenu menu = new JMenu("退出");
+		menuBar.add(menu);
+		
+		JMenuItem menuItem = new JMenuItem("退出");
+		menuItem.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+		    
+		});
+		menu.add(menuItem);
 		
 		JToolBar toolBar = new JToolBar();
 		frame.getContentPane().add(toolBar, BorderLayout.NORTH);
@@ -179,5 +194,15 @@ public class Main {
 		
 		desktopPane = new JDesktopPane();
 		frame.getContentPane().add(desktopPane, BorderLayout.CENTER);
+		
+
+        JInternalFrame internalFrame = new JInternalFrame("电力机车耗电量计算", true, true, true, true);
+        internalFrame.setBounds(20, 20, 860, 600);
+        internalFrame.setVisible(true);
+        internalFrame.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
+
+        desktopPane.add(internalFrame);
+        
+        
 	}
 }
