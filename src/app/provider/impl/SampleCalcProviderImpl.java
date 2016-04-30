@@ -30,7 +30,7 @@ import app.provider.CalcProvider;
  * @author I310818
  *
  */
-public class SampleProviderImpl implements CalcProvider {
+public class SampleCalcProviderImpl implements CalcProvider {
     private JTextField textField;
     private JTextField textField_1;
     private JTextField textField_3;
