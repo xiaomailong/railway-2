@@ -249,6 +249,7 @@ public class LocoTractionProviderImpl implements CalcProvider {
 		ctrlMethod.setBounds(385, 99, 128, 27);
 		GridBagConstraints gbc_ctrlMethod = new GridBagConstraints();
 		gbc_ctrlMethod.insets = new Insets(0, 0, 5, 5);
+		gbc_ctrlMethod.anchor = GridBagConstraints.WEST;
 		gbc_ctrlMethod.gridx = 7;
 		gbc_ctrlMethod.gridy = 3;
 		panel_1.add(ctrlMethod, gbc_ctrlMethod);
@@ -483,6 +484,12 @@ public class LocoTractionProviderImpl implements CalcProvider {
 		panel_3.add(result_5, gbc_result_5);
 		result_5.setColumns(10);
 
+		JButton calc = new JButton("开始计算");
+        GridBagConstraints gbc_calc = new GridBagConstraints();
+        gbc_calc.gridx = 3;
+        gbc_calc.gridy = 4;
+        panel_3.add(calc, gbc_calc);
+        
 		JPanel panel = new JPanel();
 		panel.setBorder(new TitledBorder(null, "生成图形", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		GridBagConstraints constraints_3 = new GridBagConstraints();

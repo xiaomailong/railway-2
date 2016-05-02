@@ -23,10 +23,9 @@ public class MenuItem extends JMenuItem {
 	                if (internalFrame == null) {
 	                    internalFrame = provider.createInternalFrame();
 	                    desktopPane.add(internalFrame);
-	                } else {
-	                	internalFrame.show();
-	                	internalFrame.toFront();
 	                }
+                	internalFrame.show();
+                	internalFrame.toFront();
 	            }
 	            
 	        });	

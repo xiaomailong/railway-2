@@ -6,33 +6,35 @@ import java.util.Map.Entry;
 import java.util.TreeMap;
 import java.util.Vector;
 
-public enum LocoType {
-    TYPE_1("国产各型电力机车"),
-    TYPE_2("6K型电力机车"),
-    TYPE_3("8G型电力机车"),
-    TYPE_4("国产各型电传动内燃机车"),
-    TYPE_5("ND5型内燃机车");
+public enum LocoVehicleType {
+	TYPE_1("内燃和电力机车"),
+	TYPE_2("滚动轴承货车"),
+    TYPE_3("滑动轴承货车");
 	
-	private static Map<Integer, LocoType> types = new TreeMap<Integer, LocoType>();
+	private static Map<Integer, LocoVehicleType> types = new TreeMap<Integer, LocoVehicleType>();
 	private final String name;
 	
 	static {
 		int index = 0;
-        for (LocoType type : LocoType.values()) {
+        for (LocoVehicleType type : LocoVehicleType.values()) {
             types.put(++index, type);
         }
 	}
 	
-	private LocoType(String name) {
+	private LocoVehicleType(String name) {
         this.name = name;
     }
 	
 	public static Vector<String> getNameList() {
     	Vector<String> nameList = new Vector<String>();
-    	Iterator<Entry<Integer, LocoType>> typeItor = types.entrySet().iterator();
+    	Iterator<Entry<Integer, LocoVehicleType>> typeItor = types.entrySet().iterator();
         while (typeItor.hasNext()) {
         	nameList.add(typeItor.next().getValue().name);
         }
         return nameList;
     }
+	
+	public String getName() {
+		return this.name;
+	}
 }
