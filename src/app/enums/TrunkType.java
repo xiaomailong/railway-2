@@ -3,7 +3,10 @@ package app.enums;
 import java.util.Vector;
 
 public enum TrunkType {
-	TYPE_1("滚动轴承货车"), TYPE_2("滑动轴承货车"), TYPE_3("空货车(不分车型)"), TYPE_4("油罐车专列(重车)");
+	TYPE_1("滚动轴承货车"),
+	TYPE_2("滑动轴承货车"),
+	TYPE_3("空货车(不分车型)"),
+	TYPE_4("油罐车专列(重车)");
 	
 	private final String name;
 	
