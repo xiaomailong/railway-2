@@ -70,7 +70,6 @@ public class LocoTractionProviderImpl implements CalcProvider {
 		internalContainer.setLayout(gridbag);
 
 		JPanel panel_1 = new JPanel();
-		panel_1.setLayout(null);
 		GridBagConstraints gbc_panel_1 = new GridBagConstraints();
 		gbc_panel_1.gridheight = 6;
 		gbc_panel_1.gridwidth = 20;
