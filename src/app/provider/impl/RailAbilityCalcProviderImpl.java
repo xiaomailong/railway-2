@@ -15,6 +15,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
@@ -61,6 +62,7 @@ public class RailAbilityCalcProviderImpl implements CalcProvider {
 	private JTextField main_2_textField_25;
 	private JTextField main_2_textField_26;
 	private JTextField main_2_textField_27;
+	private JTextField main_2_textField_28;
 	private JTextField main_2_textField;
 	private JTextField main_2_textField_1;
 	private JTextField main_2_textField_2;
@@ -92,7 +94,7 @@ public class RailAbilityCalcProviderImpl implements CalcProvider {
 	 */
 	@Override
 	public JInternalFrame createInternalFrame() {
-		JInternalFrame internalFrame = new JInternalFrame("铁路能力计算", true, true, true, true);
+		final JInternalFrame internalFrame = new JInternalFrame("铁路能力计算", true, true, true, true);
 		internalFrame.setBounds(20, 20, 860, 710);
 		internalFrame.setVisible(true);
 		internalFrame.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
@@ -221,6 +223,15 @@ public class RailAbilityCalcProviderImpl implements CalcProvider {
 		panel_1.add(textField_3, gbc_textField_3);
 
 		JButton button = new JButton("开始计算");
+		button.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		});
 		GridBagConstraints gbc_button = new GridBagConstraints();
 		gbc_button.insets = new Insets(0, 0, 0, 5);
 		gbc_button.gridx = 3;
@@ -346,6 +357,15 @@ public class RailAbilityCalcProviderImpl implements CalcProvider {
 		textField_25.setColumns(10);
 
 		JButton button_1 = new JButton("开始计算");
+		button_1.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		});
 		GridBagConstraints gbc_button_1 = new GridBagConstraints();
 		gbc_button_1.insets = new Insets(0, 0, 0, 5);
 		gbc_button_1.gridx = 3;
@@ -707,6 +727,15 @@ public class RailAbilityCalcProviderImpl implements CalcProvider {
 		textField_27.setColumns(10);
 
 		JButton calc = new JButton("开始计算");
+		calc.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		});
 		GridBagConstraints gbc_calc = new GridBagConstraints();
 		gbc_calc.gridx = 3;
 		gbc_calc.gridy = 1;
@@ -846,6 +875,43 @@ public class RailAbilityCalcProviderImpl implements CalcProvider {
 		main_2_textField_21.setColumns(10);
 
 		JButton main_2_button = new JButton("开始计算");
+		main_2_button.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String tt = main_2_textField_11.getText().trim(); //综合维修天窗时间
+				String i = main_2_textField.getText().trim(); //追踪列车间隔时间
+				String s = main_2_textField_1.getText().trim(); //客运区段长度或天窗开设长度
+				String v = main_2_textField_3.getText().trim(); //客运专线铁路列车运行速度
+				String tw = main_2_textField_2.getText().trim(); //列车运行图无效时间
+				int n; //结果：高速客运专线铁路平行运行图区间通过能力
+				if (tt.length() > 0 && i.length() > 0 && s.length() > 0 && v.length() > 0) {
+					try {
+						int tt_val = Integer.parseInt(tt);
+						int i_val =  Integer.parseInt(i);
+						int s_val = Integer.parseInt(s);
+						int v_val = Integer.parseInt(v);
+						n = (1440 - tt_val) / i_val - (60 * s_val) / (v_val * i_val);
+						main_2_textField_21.setText(String.valueOf(n));
+					} catch (Exception err) {
+						JOptionPane.showMessageDialog(internalFrame, "输入值有错误，请检查！");
+					}
+				} else if (tt.length() > 0 && i.length() > 0 && tw.length() > 0) {
+					try {
+						int tt_val = Integer.parseInt(tt);
+						int i_val =  Integer.parseInt(i);
+						int tw_val = Integer.parseInt(tw);
+						n = (1440 - tt_val - tw_val) / i_val;
+						main_2_textField_21.setText(String.valueOf(n));
+					} catch (Exception err) {
+						JOptionPane.showMessageDialog(internalFrame, "输入值有错误，请检查！");
+					}
+				} else {
+					JOptionPane.showMessageDialog(internalFrame, "用于计算的输入值不全，请补充！");
+				}
+			}
+			
+		});
 		GridBagConstraints gbc_main_2_button = new GridBagConstraints();
 		gbc_main_2_button.insets = new Insets(0, 0, 0, 5);
 		gbc_main_2_button.gridx = 3;
@@ -1084,6 +1150,15 @@ public class RailAbilityCalcProviderImpl implements CalcProvider {
 		main_2_textField_14.setColumns(10);
 
 		JButton main_2_button_1 = new JButton("开始计算");
+		main_2_button_1.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		});
 		GridBagConstraints gbc_main_2_button_1 = new GridBagConstraints();
 		gbc_main_2_button_1.insets = new Insets(0, 0, 5, 5);
 		gbc_main_2_button_1.gridx = 3;
@@ -1129,7 +1204,7 @@ public class RailAbilityCalcProviderImpl implements CalcProvider {
 		gbc_main_2_label_18.insets = new Insets(0, 0, 5, 5);
 		gbc_main_2_label_18.gridx = 2;
 		gbc_main_2_label_18.gridy = 0;
-		panel_6.add(main_2_label_18, gbc_label_18);
+		panel_6.add(main_2_label_18, gbc_main_2_label_18);
 
 		main_2_textField_9 = new JTextField();
 		main_2_textField_9.setColumns(10);
@@ -1157,7 +1232,7 @@ public class RailAbilityCalcProviderImpl implements CalcProvider {
 		panel_6.add(main_2_textField_12, gbc_main_2_textField_12);
 		main_2_textField_12.setColumns(10);
 
-		JLabel lbla = new JLabel("一列旅客列车的年运量(万人/a)");
+		JLabel lbla = new JLabel("区间通过能力使用系数");
 		GridBagConstraints gbc_lbla = new GridBagConstraints();
 		gbc_lbla.anchor = GridBagConstraints.EAST;
 		gbc_lbla.insets = new Insets(0, 0, 5, 5);
@@ -1166,8 +1241,6 @@ public class RailAbilityCalcProviderImpl implements CalcProvider {
 		panel_6.add(lbla, gbc_lbla);
 
 		main_2_textField_15 = new JTextField();
-		main_2_textField_15.setEditable(false);
-		main_2_textField_15.setEnabled(false);
 		GridBagConstraints gbc_main_2_textField_15 = new GridBagConstraints();
 		gbc_main_2_textField_15.insets = new Insets(0, 0, 5, 5);
 		gbc_main_2_textField_15.fill = GridBagConstraints.HORIZONTAL;
@@ -1210,11 +1283,30 @@ public class RailAbilityCalcProviderImpl implements CalcProvider {
 		panel_6.add(main_2_textField_16, gbc_main_2_textField_16);
 		main_2_textField_16.setColumns(10);
 
+		JLabel main_2_lbld_7 = new JLabel("一列旅客列车的年运量(万人/a)");
+		GridBagConstraints gbc_main_2_lbld_7 = new GridBagConstraints();
+		gbc_main_2_lbld_7.anchor = GridBagConstraints.EAST;
+		gbc_main_2_lbld_7.insets = new Insets(0, 0, 5, 5);
+		gbc_main_2_lbld_7.gridx = 0;
+		gbc_main_2_lbld_7.gridy = 3;
+		panel_6.add(main_2_lbld_7, gbc_main_2_lbld_7);
+
+		main_2_textField_28 = new JTextField();
+		main_2_textField_28.setEnabled(false);
+		main_2_textField_28.setEditable(false);
+		GridBagConstraints gbc_main_2_textField_28 = new GridBagConstraints();
+		gbc_main_2_textField_28.insets = new Insets(0, 0, 5, 5);
+		gbc_main_2_textField_28.fill = GridBagConstraints.HORIZONTAL;
+		gbc_main_2_textField_28.gridx = 1;
+		gbc_main_2_textField_28.gridy = 3;
+		panel_6.add(main_2_textField_28, gbc_main_2_textField_28);
+		main_2_textField_28.setColumns(10);
+		
 		JLabel lbla_1 = new JLabel("全高速列车运行的线路输送能力(万人/a)");
 		GridBagConstraints gbc_lbla_1 = new GridBagConstraints();
 		gbc_lbla_1.anchor = GridBagConstraints.EAST;
 		gbc_lbla_1.insets = new Insets(0, 0, 5, 5);
-		gbc_lbla_1.gridx = 0;
+		gbc_lbla_1.gridx = 2;
 		gbc_lbla_1.gridy = 3;
 		panel_6.add(lbla_1, gbc_lbla_1);
 
@@ -1224,7 +1316,7 @@ public class RailAbilityCalcProviderImpl implements CalcProvider {
 		GridBagConstraints gbc_main_2_textField_18 = new GridBagConstraints();
 		gbc_main_2_textField_18.insets = new Insets(0, 0, 5, 5);
 		gbc_main_2_textField_18.fill = GridBagConstraints.HORIZONTAL;
-		gbc_main_2_textField_18.gridx = 1;
+		gbc_main_2_textField_18.gridx = 3;
 		gbc_main_2_textField_18.gridy = 3;
 		panel_6.add(main_2_textField_18, gbc_main_2_textField_18);
 		main_2_textField_18.setColumns(10);

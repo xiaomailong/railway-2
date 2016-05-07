@@ -59,7 +59,7 @@ public class BrakeProblemCalcProviderImpl implements CalcProvider {
 	 */
 	@Override
 	public JInternalFrame createInternalFrame() {
-		JInternalFrame internalFrame = new JInternalFrame("列车制动问题的解算", true, true, true, true);
+		final JInternalFrame internalFrame = new JInternalFrame("列车制动问题的解算", true, true, true, true);
 		internalFrame.setBounds(20, 20, 860, 600);
 		internalFrame.setVisible(true);
 		internalFrame.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);

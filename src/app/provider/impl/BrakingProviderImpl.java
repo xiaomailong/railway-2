@@ -46,16 +46,16 @@ import app.provider.CalcProvider;
  *
  */
 public class BrakingProviderImpl implements CalcProvider {
-	private JTextField tunnelCorrectCoef;
-	private JTextField airCorrectCoef;
-	private JTextField locoTractionCoef;
-	private JTextField altitudeCorrctCoef;
-	private JTextField locoTractionForce;
-	private JTextField curveRadius;
-	private JTextField adhensionMass;
-	private JTextField speed;
-	private JTextField assistingVehCnt;
-	private JTextField locoSum;
+	private JTextField textField_26;
+	private JTextField textField_27;
+	private JTextField textField_28;
+	private JTextField textField_29;
+	private JTextField textField_30;
+	private JTextField textField_31;
+	private JTextField textField_32;
+	private JTextField textField_33;
+	private JTextField textField_34;
+	private JTextField textField_35;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
@@ -90,7 +90,7 @@ public class BrakingProviderImpl implements CalcProvider {
 	 */
 	@Override
 	public JInternalFrame createInternalFrame() {
-		JInternalFrame internalFrame = new JInternalFrame("列车制动力", true, true, true, true);
+		final JInternalFrame internalFrame = new JInternalFrame("列车制动力", true, true, true, true);
 		internalFrame.setBounds(20, 20, 1160, 720);
 		internalFrame.setVisible(true);
 		internalFrame.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
@@ -156,14 +156,14 @@ public class BrakingProviderImpl implements CalcProvider {
 		gbc_lblkmh.gridy = 1;
 		panel_1.add(lblkmh, gbc_lblkmh);
 
-		speed = new JTextField();
-		GridBagConstraints gbc_speed = new GridBagConstraints();
-		gbc_speed.insets = new Insets(0, 0, 5, 5);
-		gbc_speed.fill = GridBagConstraints.HORIZONTAL;
-		gbc_speed.gridx = 4;
-		gbc_speed.gridy = 1;
-		panel_1.add(speed, gbc_speed);
-		speed.setColumns(10);
+		textField_33 = new JTextField();
+		GridBagConstraints gbc_textField_33 = new GridBagConstraints();
+		gbc_textField_33.insets = new Insets(0, 0, 5, 5);
+		gbc_textField_33.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textField_33.gridx = 4;
+		gbc_textField_33.gridy = 1;
+		panel_1.add(textField_33, gbc_textField_33);
+		textField_33.setColumns(10);
 
 		JLabel lblNewLabel_18 = new JLabel("列车运行速度(km/h)");
 		lblNewLabel_18.setBounds(312, 46, 61, 16);
@@ -174,14 +174,14 @@ public class BrakingProviderImpl implements CalcProvider {
 		gbc_lblNewLabel_18.gridy = 1;
 		panel_1.add(lblNewLabel_18, gbc_lblNewLabel_18);
 
-		locoSum = new JTextField();
-		GridBagConstraints gbc_locoSum = new GridBagConstraints();
-		gbc_locoSum.insets = new Insets(0, 0, 5, 5);
-		gbc_locoSum.fill = GridBagConstraints.HORIZONTAL;
-		gbc_locoSum.gridx = 8;
-		gbc_locoSum.gridy = 1;
-		panel_1.add(locoSum, gbc_locoSum);
-		locoSum.setColumns(10);
+		textField_35 = new JTextField();
+		GridBagConstraints gbc_textField_35 = new GridBagConstraints();
+		gbc_textField_35.insets = new Insets(0, 0, 5, 5);
+		gbc_textField_35.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textField_35.gridx = 8;
+		gbc_textField_35.gridy = 1;
+		panel_1.add(textField_35, gbc_textField_35);
+		textField_35.setColumns(10);
 
 		JLabel lblNewLabel_16 = new JLabel("制动机类型");
 		lblNewLabel_16.setBounds(312, 18, 61, 16);
@@ -211,14 +211,14 @@ public class BrakingProviderImpl implements CalcProvider {
 		gbc_lblm.gridy = 2;
 		panel_1.add(lblm, gbc_lblm);
 
-		curveRadius = new JTextField();
-		GridBagConstraints gbc_curveRadius = new GridBagConstraints();
-		gbc_curveRadius.insets = new Insets(0, 0, 5, 5);
-		gbc_curveRadius.fill = GridBagConstraints.HORIZONTAL;
-		gbc_curveRadius.gridx = 4;
-		gbc_curveRadius.gridy = 2;
-		panel_1.add(curveRadius, gbc_curveRadius);
-		curveRadius.setColumns(10);
+		textField_31 = new JTextField();
+		GridBagConstraints gbc_textField_31 = new GridBagConstraints();
+		gbc_textField_31.insets = new Insets(0, 0, 5, 5);
+		gbc_textField_31.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textField_31.gridx = 4;
+		gbc_textField_31.gridy = 2;
+		panel_1.add(textField_31, gbc_textField_31);
+		textField_31.setColumns(10);
 
 		JLabel lblkmh_1 = new JLabel("制动初速度(km/h)");
 		GridBagConstraints gbc_lblkmh_1 = new GridBagConstraints();
@@ -228,14 +228,14 @@ public class BrakingProviderImpl implements CalcProvider {
 		gbc_lblkmh_1.gridy = 2;
 		panel_1.add(lblkmh_1, gbc_lblkmh_1);
 
-		assistingVehCnt = new JTextField();
-		GridBagConstraints gbc_assistingVehCnt = new GridBagConstraints();
-		gbc_assistingVehCnt.insets = new Insets(0, 0, 5, 5);
-		gbc_assistingVehCnt.fill = GridBagConstraints.HORIZONTAL;
-		gbc_assistingVehCnt.gridx = 8;
-		gbc_assistingVehCnt.gridy = 2;
-		panel_1.add(assistingVehCnt, gbc_assistingVehCnt);
-		assistingVehCnt.setColumns(10);
+		textField_34 = new JTextField();
+		GridBagConstraints gbc_textField_34 = new GridBagConstraints();
+		gbc_textField_34.insets = new Insets(0, 0, 5, 5);
+		gbc_textField_34.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textField_34.gridx = 8;
+		gbc_textField_34.gridy = 2;
+		panel_1.add(textField_34, gbc_textField_34);
+		textField_34.setColumns(10);
 
 		JLabel label_7 = new JLabel("列车管空气压力");
 		GridBagConstraints gbc_label_7 = new GridBagConstraints();
@@ -262,14 +262,14 @@ public class BrakingProviderImpl implements CalcProvider {
 		gbc_lblNewLabel_17.gridy = 3;
 		panel_1.add(lblNewLabel_17, gbc_lblNewLabel_17);
 
-		adhensionMass = new JTextField();
-		GridBagConstraints gbc_adhensionMass = new GridBagConstraints();
-		gbc_adhensionMass.insets = new Insets(0, 0, 5, 5);
-		gbc_adhensionMass.fill = GridBagConstraints.HORIZONTAL;
-		gbc_adhensionMass.gridx = 4;
-		gbc_adhensionMass.gridy = 3;
-		panel_1.add(adhensionMass, gbc_adhensionMass);
-		adhensionMass.setColumns(10);
+		textField_32 = new JTextField();
+		GridBagConstraints gbc_textField_32 = new GridBagConstraints();
+		gbc_textField_32.insets = new Insets(0, 0, 5, 5);
+		gbc_textField_32.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textField_32.gridx = 4;
+		gbc_textField_32.gridy = 3;
+		panel_1.add(textField_32, gbc_textField_32);
+		textField_32.setColumns(10);
 
 		JLabel label_11 = new JLabel("闸瓦/片类型");
 		GridBagConstraints gbc_label_11 = new GridBagConstraints();
@@ -632,14 +632,14 @@ public class BrakingProviderImpl implements CalcProvider {
 		gbc_lblNewLabel_2.gridy = 1;
 		panel_2.add(lblNewLabel_2, gbc_lblNewLabel_2);
 
-		tunnelCorrectCoef = new JTextField();
-		GridBagConstraints gbc_tunnelCorrectCoef = new GridBagConstraints();
-		gbc_tunnelCorrectCoef.fill = GridBagConstraints.HORIZONTAL;
-		gbc_tunnelCorrectCoef.insets = new Insets(0, 0, 5, 5);
-		gbc_tunnelCorrectCoef.gridx = 1;
-		gbc_tunnelCorrectCoef.gridy = 1;
-		panel_2.add(tunnelCorrectCoef, gbc_tunnelCorrectCoef);
-		tunnelCorrectCoef.setColumns(10);
+		textField_26 = new JTextField();
+		GridBagConstraints gbc_textField_26 = new GridBagConstraints();
+		gbc_textField_26.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textField_26.insets = new Insets(0, 0, 5, 5);
+		gbc_textField_26.gridx = 1;
+		gbc_textField_26.gridy = 1;
+		panel_2.add(textField_26, gbc_textField_26);
+		textField_26.setColumns(10);
 
 		JLabel lblNewLabel_9 = new JLabel("旅客列车/货物列车");
 		GridBagConstraints gbc_lblNewLabel_9 = new GridBagConstraints();
@@ -682,14 +682,14 @@ public class BrakingProviderImpl implements CalcProvider {
 		gbc_lblNewLabel_3.gridy = 2;
 		panel_2.add(lblNewLabel_3, gbc_lblNewLabel_3);
 
-		airCorrectCoef = new JTextField();
-		GridBagConstraints gbc_airCorrectCoef = new GridBagConstraints();
-		gbc_airCorrectCoef.fill = GridBagConstraints.HORIZONTAL;
-		gbc_airCorrectCoef.insets = new Insets(0, 0, 5, 5);
-		gbc_airCorrectCoef.gridx = 1;
-		gbc_airCorrectCoef.gridy = 2;
-		panel_2.add(airCorrectCoef, gbc_airCorrectCoef);
-		airCorrectCoef.setColumns(10);
+		textField_27 = new JTextField();
+		GridBagConstraints gbc_textField_27 = new GridBagConstraints();
+		gbc_textField_27.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textField_27.insets = new Insets(0, 0, 5, 5);
+		gbc_textField_27.gridx = 1;
+		gbc_textField_27.gridy = 2;
+		panel_2.add(textField_27, gbc_textField_27);
+		textField_27.setColumns(10);
 
 		JLabel lblNewLabel_10 = new JLabel("机车轮周牵引力(KN)");
 		GridBagConstraints gbc_lblNewLabel_10 = new GridBagConstraints();
@@ -699,14 +699,14 @@ public class BrakingProviderImpl implements CalcProvider {
 		gbc_lblNewLabel_10.gridy = 2;
 		panel_2.add(lblNewLabel_10, gbc_lblNewLabel_10);
 
-		locoTractionForce = new JTextField();
-		GridBagConstraints gbc_locoTractionForce = new GridBagConstraints();
-		gbc_locoTractionForce.insets = new Insets(0, 0, 5, 5);
-		gbc_locoTractionForce.fill = GridBagConstraints.HORIZONTAL;
-		gbc_locoTractionForce.gridx = 3;
-		gbc_locoTractionForce.gridy = 2;
-		panel_2.add(locoTractionForce, gbc_locoTractionForce);
-		locoTractionForce.setColumns(10);
+		textField_30 = new JTextField();
+		GridBagConstraints gbc_textField_30 = new GridBagConstraints();
+		gbc_textField_30.insets = new Insets(0, 0, 5, 5);
+		gbc_textField_30.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textField_30.gridx = 3;
+		gbc_textField_30.gridy = 2;
+		panel_2.add(textField_30, gbc_textField_30);
+		textField_30.setColumns(10);
 
 		JLabel lblkn_5 = new JLabel("机车动力制动力(KN)");
 		GridBagConstraints gbc_lblkn_5 = new GridBagConstraints();
@@ -815,14 +815,14 @@ public class BrakingProviderImpl implements CalcProvider {
 		gbc_lblkpa_3.gridy = 4;
 		panel_2.add(lblkpa_3, gbc_lblkpa_3);
 
-		locoTractionCoef = new JTextField();
-		GridBagConstraints gbc_locoTractionCoef = new GridBagConstraints();
-		gbc_locoTractionCoef.fill = GridBagConstraints.HORIZONTAL;
-		gbc_locoTractionCoef.insets = new Insets(0, 0, 5, 5);
-		gbc_locoTractionCoef.gridx = 3;
-		gbc_locoTractionCoef.gridy = 4;
-		panel_2.add(locoTractionCoef, gbc_locoTractionCoef);
-		locoTractionCoef.setColumns(10);
+		textField_28 = new JTextField();
+		GridBagConstraints gbc_textField_28 = new GridBagConstraints();
+		gbc_textField_28.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textField_28.insets = new Insets(0, 0, 5, 5);
+		gbc_textField_28.gridx = 3;
+		gbc_textField_28.gridy = 4;
+		panel_2.add(textField_28, gbc_textField_28);
+		textField_28.setColumns(10);
 
 		JLabel lblt_5 = new JLabel("牵引质量(t)");
 		GridBagConstraints gbc_lblt_5 = new GridBagConstraints();
@@ -865,14 +865,14 @@ public class BrakingProviderImpl implements CalcProvider {
 		gbc_lblkpa_2.gridy = 5;
 		panel_2.add(lblkpa_2, gbc_lblkpa_2);
 
-		altitudeCorrctCoef = new JTextField();
-		GridBagConstraints gbc_altitudeCorrctCoef = new GridBagConstraints();
-		gbc_altitudeCorrctCoef.fill = GridBagConstraints.HORIZONTAL;
-		gbc_altitudeCorrctCoef.insets = new Insets(0, 0, 5, 5);
-		gbc_altitudeCorrctCoef.gridx = 3;
-		gbc_altitudeCorrctCoef.gridy = 5;
-		panel_2.add(altitudeCorrctCoef, gbc_altitudeCorrctCoef);
-		altitudeCorrctCoef.setColumns(10);
+		textField_29 = new JTextField();
+		GridBagConstraints gbc_textField_29 = new GridBagConstraints();
+		gbc_textField_29.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textField_29.insets = new Insets(0, 0, 5, 5);
+		gbc_textField_29.gridx = 3;
+		gbc_textField_29.gridy = 5;
+		panel_2.add(textField_29, gbc_textField_29);
+		textField_29.setColumns(10);
 
 		JLabel lblnkn = new JLabel("机车运行单位基本阻力(N/KN)");
 		GridBagConstraints gbc_lblnkn = new GridBagConstraints();

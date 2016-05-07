@@ -80,7 +80,7 @@ public class ResistanceProviderImpl implements CalcProvider {
 	 */
 	@Override
 	public JInternalFrame createInternalFrame() {
-		JInternalFrame internalFrame = new JInternalFrame("列车阻力", true, true, true, true);
+		final JInternalFrame internalFrame = new JInternalFrame("列车阻力", true, true, true, true);
 		internalFrame.setBounds(20, 20, 1160, 600);
 		internalFrame.setVisible(true);
 		internalFrame.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);

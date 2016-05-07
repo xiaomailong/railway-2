@@ -23,7 +23,7 @@ public class SpeedAndTimeCalcProviderImpl implements CalcProvider {
      */
     @Override
     public JInternalFrame createInternalFrame() {
-		JInternalFrame internalFrame = new JInternalFrame("列车运行速度和时间的计算", true, true, true, true);
+		final JInternalFrame internalFrame = new JInternalFrame("列车运行速度和时间的计算", true, true, true, true);
 		internalFrame.setBounds(20, 20, 260, 300);
 		internalFrame.setVisible(true);
 		internalFrame.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
