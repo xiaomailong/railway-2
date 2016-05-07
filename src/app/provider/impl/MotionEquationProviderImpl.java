@@ -20,8 +20,8 @@ import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 import javax.swing.border.TitledBorder;
 
-import app.enums.BrakeShoeType;
 import app.enums.BrakeShoeType_2;
+import app.enums.BrakeShoeType_3;
 import app.enums.LocoType_2;
 import app.enums.TrunkType;
 import app.provider.CalcProvider;
@@ -90,6 +90,7 @@ public class MotionEquationProviderImpl implements CalcProvider {
 		JLabel label = new JLabel("机车型号");
 		label.setBounds(63, 18, 52, 16);
 		GridBagConstraints gbc_label = new GridBagConstraints();
+		gbc_label.gridwidth = 2;
 		gbc_label.anchor = GridBagConstraints.EAST;
 		gbc_label.insets = new Insets(0, 0, 5, 5);
 		gbc_label.gridx = 6;
@@ -126,6 +127,7 @@ public class MotionEquationProviderImpl implements CalcProvider {
 		JLabel lblNewLabel_18 = new JLabel("机车电阻制动力(KN)");
 		lblNewLabel_18.setBounds(312, 46, 61, 16);
 		GridBagConstraints gbc_lblNewLabel_18 = new GridBagConstraints();
+		gbc_lblNewLabel_18.anchor = GridBagConstraints.EAST;
 		gbc_lblNewLabel_18.insets = new Insets(0, 0, 5, 5);
 		gbc_lblNewLabel_18.gridx = 15;
 		gbc_lblNewLabel_18.gridy = 0;
@@ -143,6 +145,7 @@ public class MotionEquationProviderImpl implements CalcProvider {
 		JLabel lblkmh = new JLabel("车辆类型");
 		lblkmh.setBounds(37, 46, 78, 16);
 		GridBagConstraints gbc_lblkmh = new GridBagConstraints();
+		gbc_lblkmh.gridwidth = 2;
 		gbc_lblkmh.anchor = GridBagConstraints.EAST;
 		gbc_lblkmh.insets = new Insets(0, 0, 5, 5);
 		gbc_lblkmh.gridx = 6;
@@ -177,6 +180,7 @@ public class MotionEquationProviderImpl implements CalcProvider {
 		JLabel lblNewLabel_19 = new JLabel("单位合力(N/KN)");
 		lblNewLabel_19.setBounds(312, 75, 61, 16);
 		GridBagConstraints gbc_lblNewLabel_19 = new GridBagConstraints();
+		gbc_lblNewLabel_19.anchor = GridBagConstraints.EAST;
 		gbc_lblNewLabel_19.insets = new Insets(0, 0, 5, 5);
 		gbc_lblNewLabel_19.gridx = 15;
 		gbc_lblNewLabel_19.gridy = 1;
@@ -194,6 +198,7 @@ public class MotionEquationProviderImpl implements CalcProvider {
 		JLabel lblm = new JLabel("机车计算质量(t)");
 		lblm.setBounds(63, 75, 52, 16);
 		GridBagConstraints gbc_lblm = new GridBagConstraints();
+		gbc_lblm.gridwidth = 2;
 		gbc_lblm.anchor = GridBagConstraints.EAST;
 		gbc_lblm.insets = new Insets(0, 0, 5, 5);
 		gbc_lblm.gridx = 6;
@@ -246,6 +251,7 @@ public class MotionEquationProviderImpl implements CalcProvider {
 		JLabel lblNewLabel_17 = new JLabel("牵引质量(t)");
 		lblNewLabel_17.setBounds(11, 103, 104, 16);
 		GridBagConstraints gbc_lblNewLabel_17 = new GridBagConstraints();
+		gbc_lblNewLabel_17.gridwidth = 2;
 		gbc_lblNewLabel_17.anchor = GridBagConstraints.EAST;
 		gbc_lblNewLabel_17.insets = new Insets(0, 0, 5, 5);
 		gbc_lblNewLabel_17.gridx = 6;
@@ -374,7 +380,7 @@ public class MotionEquationProviderImpl implements CalcProvider {
 		gbc_label_2.gridy = 2;
 		panel_2.add(label_2, gbc_label_2);
 
-		JComboBox<String> comboBox = new JComboBox<String>(BrakeShoeType.getNameList());
+		JComboBox<String> comboBox = new JComboBox<String>(BrakeShoeType_3.getNameList());
 		GridBagConstraints gbc_comboBox = new GridBagConstraints();
 		gbc_comboBox.insets = new Insets(0, 0, 5, 5);
 		gbc_comboBox.fill = GridBagConstraints.HORIZONTAL;
@@ -428,9 +434,10 @@ public class MotionEquationProviderImpl implements CalcProvider {
 		result_1.setEnabled(false);
 		result_1.setEditable(false);
 		GridBagConstraints gbc_result_1 = new GridBagConstraints();
+		gbc_result_1.gridwidth = 2;
 		gbc_result_1.insets = new Insets(0, 0, 5, 5);
 		gbc_result_1.fill = GridBagConstraints.HORIZONTAL;
-		gbc_result_1.gridx = 2;
+		gbc_result_1.gridx = 1;
 		gbc_result_1.gridy = 0;
 		panel_3.add(result_1, gbc_result_1);
 		result_1.setColumns(10);
@@ -447,9 +454,10 @@ public class MotionEquationProviderImpl implements CalcProvider {
 		result_2.setEnabled(false);
 		result_2.setEditable(false);
 		GridBagConstraints gbc_result_2 = new GridBagConstraints();
+		gbc_result_2.gridwidth = 2;
 		gbc_result_2.insets = new Insets(0, 0, 5, 5);
 		gbc_result_2.fill = GridBagConstraints.HORIZONTAL;
-		gbc_result_2.gridx = 2;
+		gbc_result_2.gridx = 1;
 		gbc_result_2.gridy = 1;
 		panel_3.add(result_2, gbc_result_2);
 		result_2.setColumns(10);
@@ -466,9 +474,10 @@ public class MotionEquationProviderImpl implements CalcProvider {
 		result_3.setEnabled(false);
 		result_3.setEditable(false);
 		GridBagConstraints gbc_result_3 = new GridBagConstraints();
+		gbc_result_3.gridwidth = 2;
 		gbc_result_3.insets = new Insets(0, 0, 5, 5);
 		gbc_result_3.fill = GridBagConstraints.HORIZONTAL;
-		gbc_result_3.gridx = 2;
+		gbc_result_3.gridx = 1;
 		gbc_result_3.gridy = 2;
 		panel_3.add(result_3, gbc_result_3);
 		result_3.setColumns(10);
@@ -485,9 +494,10 @@ public class MotionEquationProviderImpl implements CalcProvider {
 		result_4.setEditable(false);
 		result_4.setEnabled(false);
 		GridBagConstraints gbc_result_4 = new GridBagConstraints();
+		gbc_result_4.gridwidth = 2;
 		gbc_result_4.insets = new Insets(0, 0, 5, 5);
 		gbc_result_4.fill = GridBagConstraints.HORIZONTAL;
-		gbc_result_4.gridx = 2;
+		gbc_result_4.gridx = 1;
 		gbc_result_4.gridy = 3;
 		panel_3.add(result_4, gbc_result_4);
 		result_4.setColumns(10);
@@ -504,9 +514,10 @@ public class MotionEquationProviderImpl implements CalcProvider {
 		result_5.setEnabled(false);
 		result_5.setEditable(false);
 		GridBagConstraints gbc_result_5 = new GridBagConstraints();
+		gbc_result_5.gridwidth = 2;
 		gbc_result_5.insets = new Insets(0, 0, 0, 5);
 		gbc_result_5.fill = GridBagConstraints.HORIZONTAL;
-		gbc_result_5.gridx = 2;
+		gbc_result_5.gridx = 1;
 		gbc_result_5.gridy = 4;
 		panel_3.add(result_5, gbc_result_5);
 		result_5.setColumns(10);

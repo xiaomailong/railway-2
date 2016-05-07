@@ -3,6 +3,7 @@
  */
 package app.provider.impl;
 
+import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.GridBagConstraints;
@@ -93,13 +94,20 @@ public class BrakingProviderImpl implements CalcProvider {
 		internalFrame.setBounds(20, 20, 1160, 720);
 		internalFrame.setVisible(true);
 		internalFrame.setDefaultCloseOperation(WindowConstants.HIDE_ON_CLOSE);
-
-		Container internalContainer = internalFrame.getContentPane();
+		
+		final Container internalContainer = internalFrame.getContentPane();
+		final CardLayout cardLayout = new CardLayout();
+        internalContainer.setLayout(cardLayout);
+        
+        JPanel brakingPanel_1 = new JPanel();
+        internalContainer.add(brakingPanel_1);
+        JPanel brakingPanel_2 = new JPanel();
+        internalContainer.add(brakingPanel_2);
 		GridBagLayout gridbag = new GridBagLayout();
 		gridbag.rowWeights = new double[] { 1.0, 0.0, 0.0, 0.0, 1.0, 1.0, 0.0, 0.0 };
 		gridbag.columnWeights = new double[] { 0.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0,
 				0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 };
-		internalContainer.setLayout(gridbag);
+		brakingPanel_1.setLayout(gridbag);
 
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new TitledBorder(null, "实算法求列车制动力", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -110,7 +118,7 @@ public class BrakingProviderImpl implements CalcProvider {
 		gbc_panel_1.fill = GridBagConstraints.BOTH;
 		gbc_panel_1.gridx = 1;
 		gbc_panel_1.gridy = 0;
-		internalFrame.getContentPane().add(panel_1, gbc_panel_1);
+		brakingPanel_1.add(panel_1, gbc_panel_1);
 		GridBagLayout gbl_panel_1 = new GridBagLayout();
 		gbl_panel_1.columnWidths = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 				0, 0, 0 };
@@ -560,7 +568,7 @@ public class BrakingProviderImpl implements CalcProvider {
 		gbc_panel_2.fill = GridBagConstraints.BOTH;
 		gbc_panel_2.gridx = 1;
 		gbc_panel_2.gridy = 6;
-		internalFrame.getContentPane().add(panel_2, gbc_panel_2);
+		brakingPanel_1.add(panel_2, gbc_panel_2);
 		GridBagLayout gbl_panel_2 = new GridBagLayout();
 		gbl_panel_2.columnWidths = new int[] { 130, 169, 117, 169, 0, 0, 0, 0 };
 		gbl_panel_2.rowHeights = new int[] { 28, 28, 28, 0, 0, 0, 0, 0, 0, 0 };
@@ -1020,6 +1028,14 @@ public class BrakingProviderImpl implements CalcProvider {
 		textField_18.setColumns(10);
 
 		JButton btnNewButton = new JButton("开始计算");
+		btnNewButton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				cardLayout.next(internalContainer);
+			}
+			
+		});
 		GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
 		gbc_btnNewButton.insets = new Insets(0, 0, 0, 5);
 		gbc_btnNewButton.gridx = 5;
