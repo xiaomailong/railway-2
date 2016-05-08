@@ -28,6 +28,7 @@ import app.enums.EmuType;
 import app.enums.LocoVehicleModel;
 import app.enums.LocoVehicleType;
 import app.enums.RampDirection;
+import app.enums.RampType;
 import app.enums.TrunkOrBus;
 import app.enums.TrunkType;
 import app.provider.CalcProvider;
@@ -164,7 +165,7 @@ public class ResistanceProviderImpl implements CalcProvider {
 		GridBagConstraints gbc_trunkOrBus = new GridBagConstraints();
 		gbc_trunkOrBus.anchor = GridBagConstraints.WEST;
 		gbc_trunkOrBus.insets = new Insets(0, 0, 5, 5);
-		gbc_trunkOrBus.gridx = 12;
+		gbc_trunkOrBus.gridx = 9;
 		gbc_trunkOrBus.gridy = 0;
 		panel_1.add(trunkOrBus, gbc_trunkOrBus);
 
@@ -217,7 +218,7 @@ public class ResistanceProviderImpl implements CalcProvider {
 		GridBagConstraints gbc_trainLength = new GridBagConstraints();
 		gbc_trainLength.insets = new Insets(0, 0, 5, 5);
 		gbc_trainLength.fill = GridBagConstraints.HORIZONTAL;
-		gbc_trainLength.gridx = 12;
+		gbc_trainLength.gridx = 9;
 		gbc_trainLength.gridy = 1;
 		panel_1.add(trainLength, gbc_trainLength);
 		trainLength.setColumns(10);
@@ -251,7 +252,7 @@ public class ResistanceProviderImpl implements CalcProvider {
 		GridBagConstraints gbc_trainMassPerMeter = new GridBagConstraints();
 		gbc_trainMassPerMeter.insets = new Insets(0, 0, 5, 5);
 		gbc_trainMassPerMeter.fill = GridBagConstraints.HORIZONTAL;
-		gbc_trainMassPerMeter.gridx = 12;
+		gbc_trainMassPerMeter.gridx = 9;
 		gbc_trainMassPerMeter.gridy = 2;
 		panel_1.add(trainMassPerMeter, gbc_trainMassPerMeter);
 		trainMassPerMeter.setColumns(10);
@@ -312,6 +313,7 @@ public class ResistanceProviderImpl implements CalcProvider {
 
 		JLabel lblm_2 = new JLabel("曲线半径(m)");
 		GridBagConstraints gbc_lblm_2 = new GridBagConstraints();
+		gbc_lblm_2.anchor = GridBagConstraints.EAST;
 		gbc_lblm_2.insets = new Insets(0, 0, 5, 5);
 		gbc_lblm_2.gridx = 8;
 		gbc_lblm_2.gridy = 3;
@@ -321,7 +323,7 @@ public class ResistanceProviderImpl implements CalcProvider {
 		GridBagConstraints gbc_curveRadius = new GridBagConstraints();
 		gbc_curveRadius.insets = new Insets(0, 0, 5, 5);
 		gbc_curveRadius.fill = GridBagConstraints.HORIZONTAL;
-		gbc_curveRadius.gridx = 12;
+		gbc_curveRadius.gridx = 9;
 		gbc_curveRadius.gridy = 3;
 		panel_1.add(curveRadius, gbc_curveRadius);
 		curveRadius.setColumns(10);
@@ -345,6 +347,7 @@ public class ResistanceProviderImpl implements CalcProvider {
 
 		JLabel lblm_3 = new JLabel("缓和曲线(m)");
 		GridBagConstraints gbc_lblm_3 = new GridBagConstraints();
+		gbc_lblm_3.anchor = GridBagConstraints.EAST;
 		gbc_lblm_3.insets = new Insets(0, 0, 5, 5);
 		gbc_lblm_3.gridx = 8;
 		gbc_lblm_3.gridy = 4;
@@ -354,7 +357,7 @@ public class ResistanceProviderImpl implements CalcProvider {
 		GridBagConstraints gbc_spiral = new GridBagConstraints();
 		gbc_spiral.insets = new Insets(0, 0, 5, 5);
 		gbc_spiral.fill = GridBagConstraints.HORIZONTAL;
-		gbc_spiral.gridx = 12;
+		gbc_spiral.gridx = 9;
 		gbc_spiral.gridy = 4;
 		panel_1.add(spiral, gbc_spiral);
 		spiral.setColumns(10);
@@ -395,6 +398,7 @@ public class ResistanceProviderImpl implements CalcProvider {
 
 		JLabel lblm_4 = new JLabel("曲线总长(m)");
 		GridBagConstraints gbc_lblm_4 = new GridBagConstraints();
+		gbc_lblm_4.anchor = GridBagConstraints.EAST;
 		gbc_lblm_4.insets = new Insets(0, 0, 5, 5);
 		gbc_lblm_4.gridx = 8;
 		gbc_lblm_4.gridy = 5;
@@ -404,7 +408,7 @@ public class ResistanceProviderImpl implements CalcProvider {
 		GridBagConstraints gbc_curveLength = new GridBagConstraints();
 		gbc_curveLength.insets = new Insets(0, 0, 5, 5);
 		gbc_curveLength.fill = GridBagConstraints.HORIZONTAL;
-		gbc_curveLength.gridx = 12;
+		gbc_curveLength.gridx = 9;
 		gbc_curveLength.gridy = 5;
 		panel_1.add(curveLength, gbc_curveLength);
 		curveLength.setColumns(10);
@@ -445,6 +449,7 @@ public class ResistanceProviderImpl implements CalcProvider {
 
 		JLabel label_8 = new JLabel("曲线中心角(°)");
 		GridBagConstraints gbc_label_8 = new GridBagConstraints();
+		gbc_label_8.anchor = GridBagConstraints.EAST;
 		gbc_label_8.insets = new Insets(0, 0, 5, 5);
 		gbc_label_8.gridx = 8;
 		gbc_label_8.gridy = 6;
@@ -454,7 +459,7 @@ public class ResistanceProviderImpl implements CalcProvider {
 		GridBagConstraints gbc_curveCenterAngle = new GridBagConstraints();
 		gbc_curveCenterAngle.insets = new Insets(0, 0, 5, 5);
 		gbc_curveCenterAngle.fill = GridBagConstraints.HORIZONTAL;
-		gbc_curveCenterAngle.gridx = 12;
+		gbc_curveCenterAngle.gridx = 9;
 		gbc_curveCenterAngle.gridy = 6;
 		panel_1.add(curveCenterAngle, gbc_curveCenterAngle);
 		curveCenterAngle.setColumns(10);
@@ -483,6 +488,23 @@ public class ResistanceProviderImpl implements CalcProvider {
 		panel_1.add(trainOverCurveRadius, gbc_trainOverCurveRadius);
 		trainOverCurveRadius.setColumns(10);
 
+		JLabel rampType_lbl = new JLabel("有/无限制坡道");
+		GridBagConstraints gbc_rampType_lbl = new GridBagConstraints();
+		gbc_rampType_lbl.anchor = GridBagConstraints.EAST;
+		gbc_rampType_lbl.insets = new Insets(0, 0, 5, 5);
+		gbc_rampType_lbl.gridx = 3;
+		gbc_rampType_lbl.gridy = 8;
+		panel_1.add(rampType_lbl, gbc_rampType_lbl);
+
+		JComboBox<String> rampType = new JComboBox<String>(RampType.getNameList());
+		rampType.setBounds(385, 14, 128, 27);
+		GridBagConstraints gbc_rampType = new GridBagConstraints();
+		gbc_rampType.anchor = GridBagConstraints.WEST;
+		gbc_rampType.insets = new Insets(0, 0, 5, 5);
+		gbc_rampType.gridx = 4;
+		gbc_rampType.gridy = 8;
+		panel_1.add(rampType, gbc_rampType);
+		
 		JLabel lblm_7 = new JLabel("列车所覆盖的曲线的计算长度(m)");
 		GridBagConstraints gbc_lblm_7 = new GridBagConstraints();
 		gbc_lblm_7.anchor = GridBagConstraints.EAST;
@@ -502,6 +524,7 @@ public class ResistanceProviderImpl implements CalcProvider {
 
 		JLabel label = new JLabel("起动坡道坡度");
 		GridBagConstraints gbc_label = new GridBagConstraints();
+		gbc_label.anchor = GridBagConstraints.EAST;
 		gbc_label.insets = new Insets(0, 0, 5, 5);
 		gbc_label.gridx = 8;
 		gbc_label.gridy = 8;
@@ -511,7 +534,7 @@ public class ResistanceProviderImpl implements CalcProvider {
 		GridBagConstraints gbc_initRampSlope = new GridBagConstraints();
 		gbc_initRampSlope.insets = new Insets(0, 0, 5, 5);
 		gbc_initRampSlope.fill = GridBagConstraints.HORIZONTAL;
-		gbc_initRampSlope.gridx = 12;
+		gbc_initRampSlope.gridx = 9;
 		gbc_initRampSlope.gridy = 8;
 		panel_1.add(initRampSlope, gbc_initRampSlope);
 		initRampSlope.setColumns(10);
@@ -535,6 +558,7 @@ public class ResistanceProviderImpl implements CalcProvider {
 
 		JLabel label_2 = new JLabel("机车、车辆类型");
 		GridBagConstraints gbc_label_2 = new GridBagConstraints();
+		gbc_label_2.anchor = GridBagConstraints.EAST;
 		gbc_label_2.insets = new Insets(0, 0, 5, 5);
 		gbc_label_2.gridx = 8;
 		gbc_label_2.gridy = 9;
@@ -544,7 +568,7 @@ public class ResistanceProviderImpl implements CalcProvider {
 		GridBagConstraints gbc_locoVehicleType = new GridBagConstraints();
 		gbc_locoVehicleType.insets = new Insets(0, 0, 5, 5);
 		gbc_locoVehicleType.fill = GridBagConstraints.HORIZONTAL;
-		gbc_locoVehicleType.gridx = 12;
+		gbc_locoVehicleType.gridx = 9;
 		gbc_locoVehicleType.gridy = 9;
 		panel_1.add(locoVehicleType, gbc_locoVehicleType);
 
@@ -627,7 +651,7 @@ public class ResistanceProviderImpl implements CalcProvider {
 		panel_3.add(result_6, gbc_result_6);
 		result_6.setColumns(10);
 
-		JLabel lblnkn_6 = new JLabel("\"类型\"平均单位阻力(N/KN))");
+		JLabel lblnkn_6 = new JLabel("\"类型\"列车平均单位阻力(N/KN))");
 		GridBagConstraints gbc_lblnkn_6 = new GridBagConstraints();
 		gbc_lblnkn_6.fill = GridBagConstraints.HORIZONTAL;
 		gbc_lblnkn_6.insets = new Insets(0, 0, 5, 5);

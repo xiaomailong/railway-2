@@ -40,7 +40,6 @@ public class MotionEquationProviderImpl implements CalcProvider {
 	private JTextField result_2;
 	private JTextField result_3;
 	private JTextField result_4;
-	private JTextField result_5;
 	private JTextField brakeLastSpeed;
 	private JTextField trainConvertBrakeRatio;
 	private JTextField locoElectricBrake;
@@ -48,6 +47,8 @@ public class MotionEquationProviderImpl implements CalcProvider {
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
+	private JTextField textField_3;
+	private JTextField textField_4;
 
 	/*
 	 * (non-Javadoc)
@@ -333,9 +334,9 @@ public class MotionEquationProviderImpl implements CalcProvider {
 		internalFrame.getContentPane().add(panel_2, gbc_panel_2);
 		GridBagLayout gbl_panel_2 = new GridBagLayout();
 		gbl_panel_2.columnWidths = new int[] { 130, 0, 169, 0, 0, 0, 117, 169, 0 };
-		gbl_panel_2.rowHeights = new int[] { 28, 28, 28, 0, 0 };
+		gbl_panel_2.rowHeights = new int[] { 28, 28, 28, 28, 28, 0, 0 };
 		gbl_panel_2.columnWeights = new double[] { 0.0, 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 0.0, Double.MIN_VALUE };
-		gbl_panel_2.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE };
+		gbl_panel_2.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE };
 		panel_2.setLayout(gbl_panel_2);
 
 		JLabel lblkmh_5 = new JLabel("制动初速(km/h)");
@@ -388,7 +389,7 @@ public class MotionEquationProviderImpl implements CalcProvider {
 		gbc_comboBox.gridy = 2;
 		panel_2.add(comboBox, gbc_comboBox);
 
-		JLabel label_8 = new JLabel("常用制动系数");
+		JLabel label_8 = new JLabel("加算坡度千分数");
 		GridBagConstraints gbc_label_8 = new GridBagConstraints();
 		gbc_label_8.anchor = GridBagConstraints.EAST;
 		gbc_label_8.insets = new Insets(0, 0, 0, 5);
@@ -404,6 +405,40 @@ public class MotionEquationProviderImpl implements CalcProvider {
 		gbc_textField_2.gridy = 3;
 		panel_2.add(textField_2, gbc_textField_2);
 		textField_2.setColumns(10);
+		
+		JLabel label_9 = new JLabel("列车换算制动率");
+		GridBagConstraints gbc_label_9 = new GridBagConstraints();
+		gbc_label_9.anchor = GridBagConstraints.EAST;
+		gbc_label_9.insets = new Insets(0, 0, 0, 5);
+		gbc_label_9.gridx = 1;
+		gbc_label_9.gridy = 4;
+		panel_2.add(label_9, gbc_label_9);
+
+		textField_3 = new JTextField();
+		GridBagConstraints gbc_textField_3 = new GridBagConstraints();
+		gbc_textField_3.insets = new Insets(0, 0, 0, 5);
+		gbc_textField_3.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textField_3.gridx = 2;
+		gbc_textField_3.gridy = 4;
+		panel_2.add(textField_3, gbc_textField_3);
+		textField_3.setColumns(10);
+		
+		JLabel label_10 = new JLabel("常用制动系数");
+		GridBagConstraints gbc_label_10 = new GridBagConstraints();
+		gbc_label_10.anchor = GridBagConstraints.EAST;
+		gbc_label_10.insets = new Insets(0, 0, 0, 5);
+		gbc_label_10.gridx = 1;
+		gbc_label_10.gridy = 5;
+		panel_2.add(label_10, gbc_label_10);
+
+		textField_4 = new JTextField();
+		GridBagConstraints gbc_textField_4 = new GridBagConstraints();
+		gbc_textField_4.insets = new Insets(0, 0, 0, 5);
+		gbc_textField_4.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textField_4.gridx = 2;
+		gbc_textField_4.gridy = 5;
+		panel_2.add(textField_4, gbc_textField_4);
+		textField_4.setColumns(10);
 
 		JPanel panel_3 = new JPanel();
 		panel_3.setBorder(new TitledBorder(null, "结果", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -482,7 +517,7 @@ public class MotionEquationProviderImpl implements CalcProvider {
 		panel_3.add(result_3, gbc_result_3);
 		result_3.setColumns(10);
 
-		JLabel lblnkn = new JLabel("各速度下常用制动合力增大(N/KN)");
+		JLabel lblnkn = new JLabel("制动合力曲线");
 		GridBagConstraints gbc_lblnkn = new GridBagConstraints();
 		gbc_lblnkn.anchor = GridBagConstraints.EAST;
 		gbc_lblnkn.insets = new Insets(0, 0, 5, 5);
@@ -502,25 +537,13 @@ public class MotionEquationProviderImpl implements CalcProvider {
 		panel_3.add(result_4, gbc_result_4);
 		result_4.setColumns(10);
 
-		JLabel label_6 = new JLabel("相当于折算坡度(‰)");
+		JLabel label_6 = new JLabel("的坐标原点的移动量");
 		GridBagConstraints gbc_label_6 = new GridBagConstraints();
 		gbc_label_6.anchor = GridBagConstraints.EAST;
 		gbc_label_6.insets = new Insets(0, 0, 0, 5);
 		gbc_label_6.gridx = 0;
 		gbc_label_6.gridy = 4;
 		panel_3.add(label_6, gbc_label_6);
-
-		result_5 = new JTextField();
-		result_5.setEnabled(false);
-		result_5.setEditable(false);
-		GridBagConstraints gbc_result_5 = new GridBagConstraints();
-		gbc_result_5.gridwidth = 2;
-		gbc_result_5.insets = new Insets(0, 0, 0, 5);
-		gbc_result_5.fill = GridBagConstraints.HORIZONTAL;
-		gbc_result_5.gridx = 1;
-		gbc_result_5.gridy = 4;
-		panel_3.add(result_5, gbc_result_5);
-		result_5.setColumns(10);
 
 		return internalFrame;
 	}

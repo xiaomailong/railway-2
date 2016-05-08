@@ -36,7 +36,7 @@ public class LocoTractionProviderImpl implements CalcProvider {
 	private JTextField dieselTractionForce;
 	private JTextField tunnelCorrectCoef;
 	private JTextField airCorrectCoef;
-	private JTextField locoTractionCoef;
+	private JTextField locoCycleTractionForce;
 	private JTextField altitudeCorrctCoef;
 	private JTextField locoTractionForce;
 	private JTextField curveRadius;
@@ -152,6 +152,7 @@ public class LocoTractionProviderImpl implements CalcProvider {
 		JLabel lblkmh = new JLabel("机车运行速度(km/h)");
 		lblkmh.setBounds(37, 46, 78, 16);
 		GridBagConstraints gbc_lblkmh = new GridBagConstraints();
+		gbc_lblkmh.anchor = GridBagConstraints.EAST;
 		gbc_lblkmh.insets = new Insets(0, 0, 5, 5);
 		gbc_lblkmh.gridx = 4;
 		gbc_lblkmh.gridy = 1;
@@ -252,6 +253,23 @@ public class LocoTractionProviderImpl implements CalcProvider {
 		gbc_ctrlMethod.gridx = 7;
 		gbc_ctrlMethod.gridy = 3;
 		panel_1.add(ctrlMethod, gbc_ctrlMethod);
+		
+		JLabel lblNewLabel_8 = new JLabel("电力/内燃机车轮周牵引力(KN)");
+		GridBagConstraints gbc_lblNewLabel_8 = new GridBagConstraints();
+		gbc_lblNewLabel_8.anchor = GridBagConstraints.EAST;
+		gbc_lblNewLabel_8.insets = new Insets(0, 0, 5, 5);
+		gbc_lblNewLabel_8.gridx = 4;
+		gbc_lblNewLabel_8.gridy = 4;
+		panel_1.add(lblNewLabel_8, gbc_lblNewLabel_8);
+
+		locoCycleTractionForce = new JTextField();
+		GridBagConstraints gbc_locoCycleTractionForce = new GridBagConstraints();
+		gbc_locoCycleTractionForce.fill = GridBagConstraints.HORIZONTAL;
+		gbc_locoCycleTractionForce.insets = new Insets(0, 0, 5, 0);
+		gbc_locoCycleTractionForce.gridx = 5;
+		gbc_locoCycleTractionForce.gridy = 4;
+		panel_1.add(locoCycleTractionForce, gbc_locoCycleTractionForce);
+		locoCycleTractionForce.setColumns(10);
 
 		JPanel panel_2 = new JPanel();
 		panel_2.setBorder(new TitledBorder(null, "内燃机车牵引力的修正", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -287,37 +305,20 @@ public class LocoTractionProviderImpl implements CalcProvider {
 		panel_2.add(dieselTractionForce, gbc_dieselTractionForce);
 		dieselTractionForce.setColumns(10);
 
-		JLabel lblNewLabel_8 = new JLabel("机车牵引力使用系数");
-		GridBagConstraints gbc_lblNewLabel_8 = new GridBagConstraints();
-		gbc_lblNewLabel_8.anchor = GridBagConstraints.EAST;
-		gbc_lblNewLabel_8.insets = new Insets(0, 0, 5, 5);
-		gbc_lblNewLabel_8.gridx = 2;
-		gbc_lblNewLabel_8.gridy = 0;
-		panel_2.add(lblNewLabel_8, gbc_lblNewLabel_8);
-
-		locoTractionCoef = new JTextField();
-		GridBagConstraints gbc_locoTractionCoef = new GridBagConstraints();
-		gbc_locoTractionCoef.fill = GridBagConstraints.HORIZONTAL;
-		gbc_locoTractionCoef.insets = new Insets(0, 0, 5, 0);
-		gbc_locoTractionCoef.gridx = 3;
-		gbc_locoTractionCoef.gridy = 0;
-		panel_2.add(locoTractionCoef, gbc_locoTractionCoef);
-		locoTractionCoef.setColumns(10);
-
 		JLabel lblNewLabel_2 = new JLabel("隧道影响修正系数");
 		GridBagConstraints gbc_lblNewLabel_2 = new GridBagConstraints();
 		gbc_lblNewLabel_2.anchor = GridBagConstraints.EAST;
 		gbc_lblNewLabel_2.insets = new Insets(0, 0, 5, 5);
-		gbc_lblNewLabel_2.gridx = 0;
-		gbc_lblNewLabel_2.gridy = 1;
+		gbc_lblNewLabel_2.gridx = 2;
+		gbc_lblNewLabel_2.gridy = 0;
 		panel_2.add(lblNewLabel_2, gbc_lblNewLabel_2);
 
 		tunnelCorrectCoef = new JTextField();
 		GridBagConstraints gbc_tunnelCorrectCoef = new GridBagConstraints();
 		gbc_tunnelCorrectCoef.fill = GridBagConstraints.HORIZONTAL;
 		gbc_tunnelCorrectCoef.insets = new Insets(0, 0, 5, 5);
-		gbc_tunnelCorrectCoef.gridx = 1;
-		gbc_tunnelCorrectCoef.gridy = 1;
+		gbc_tunnelCorrectCoef.gridx = 3;
+		gbc_tunnelCorrectCoef.gridy = 0;
 		panel_2.add(tunnelCorrectCoef, gbc_tunnelCorrectCoef);
 		tunnelCorrectCoef.setColumns(10);
 
@@ -325,7 +326,7 @@ public class LocoTractionProviderImpl implements CalcProvider {
 		GridBagConstraints gbc_lblNewLabel_9 = new GridBagConstraints();
 		gbc_lblNewLabel_9.anchor = GridBagConstraints.EAST;
 		gbc_lblNewLabel_9.insets = new Insets(0, 0, 5, 5);
-		gbc_lblNewLabel_9.gridx = 2;
+		gbc_lblNewLabel_9.gridx = 0;
 		gbc_lblNewLabel_9.gridy = 1;
 		panel_2.add(lblNewLabel_9, gbc_lblNewLabel_9);
 
@@ -333,7 +334,7 @@ public class LocoTractionProviderImpl implements CalcProvider {
 		GridBagConstraints gbc_altitudeCorrctCoef = new GridBagConstraints();
 		gbc_altitudeCorrctCoef.fill = GridBagConstraints.HORIZONTAL;
 		gbc_altitudeCorrctCoef.insets = new Insets(0, 0, 5, 0);
-		gbc_altitudeCorrctCoef.gridx = 3;
+		gbc_altitudeCorrctCoef.gridx = 1;
 		gbc_altitudeCorrctCoef.gridy = 1;
 		panel_2.add(altitudeCorrctCoef, gbc_altitudeCorrctCoef);
 		altitudeCorrctCoef.setColumns(10);
@@ -342,16 +343,16 @@ public class LocoTractionProviderImpl implements CalcProvider {
 		GridBagConstraints gbc_lblNewLabel_3 = new GridBagConstraints();
 		gbc_lblNewLabel_3.anchor = GridBagConstraints.EAST;
 		gbc_lblNewLabel_3.insets = new Insets(0, 0, 0, 5);
-		gbc_lblNewLabel_3.gridx = 0;
-		gbc_lblNewLabel_3.gridy = 2;
+		gbc_lblNewLabel_3.gridx = 2;
+		gbc_lblNewLabel_3.gridy = 1;
 		panel_2.add(lblNewLabel_3, gbc_lblNewLabel_3);
 
 		airCorrectCoef = new JTextField();
 		GridBagConstraints gbc_airCorrectCoef = new GridBagConstraints();
 		gbc_airCorrectCoef.fill = GridBagConstraints.HORIZONTAL;
 		gbc_airCorrectCoef.insets = new Insets(0, 0, 0, 5);
-		gbc_airCorrectCoef.gridx = 1;
-		gbc_airCorrectCoef.gridy = 2;
+		gbc_airCorrectCoef.gridx = 3;
+		gbc_airCorrectCoef.gridy = 1;
 		panel_2.add(airCorrectCoef, gbc_airCorrectCoef);
 		airCorrectCoef.setColumns(10);
 
@@ -359,14 +360,14 @@ public class LocoTractionProviderImpl implements CalcProvider {
 		GridBagConstraints gbc_lblNewLabel_10 = new GridBagConstraints();
 		gbc_lblNewLabel_10.anchor = GridBagConstraints.EAST;
 		gbc_lblNewLabel_10.insets = new Insets(0, 0, 0, 5);
-		gbc_lblNewLabel_10.gridx = 2;
+		gbc_lblNewLabel_10.gridx = 0;
 		gbc_lblNewLabel_10.gridy = 2;
 		panel_2.add(lblNewLabel_10, gbc_lblNewLabel_10);
 
 		locoTractionForce = new JTextField();
 		GridBagConstraints gbc_locoTractionForce = new GridBagConstraints();
 		gbc_locoTractionForce.fill = GridBagConstraints.HORIZONTAL;
-		gbc_locoTractionForce.gridx = 3;
+		gbc_locoTractionForce.gridx = 1;
 		gbc_locoTractionForce.gridy = 2;
 		panel_2.add(locoTractionForce, gbc_locoTractionForce);
 		locoTractionForce.setColumns(10);
@@ -426,7 +427,7 @@ public class LocoTractionProviderImpl implements CalcProvider {
 		panel_3.add(result_2, gbc_result_2);
 		result_2.setColumns(10);
 
-		JLabel label_4 = new JLabel("机车轮周牵引力(KN)");
+		JLabel label_4 = new JLabel("机车总的轮周牵引力(KN)");
 		GridBagConstraints gbc_label_4 = new GridBagConstraints();
 		gbc_label_4.anchor = GridBagConstraints.EAST;
 		gbc_label_4.insets = new Insets(0, 0, 5, 5);

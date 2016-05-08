@@ -49,6 +49,7 @@ public class BrakeProblemCalcProviderImpl implements CalcProvider {
 	private JTextField textField_3;
 	private JTextField textField_4;
 	private JTextField textField_5;
+	private JTextField textField_6;
 	private JTextField result_6;
 	private JTextField result_7;
 
@@ -102,7 +103,7 @@ public class BrakeProblemCalcProviderImpl implements CalcProvider {
 		locoType.setBounds(121, 13, 165, 28);
 		GridBagConstraints gbc_locoType = new GridBagConstraints();
 		gbc_locoType.insets = new Insets(0, 0, 5, 5);
-		gbc_locoType.gridx = 8;
+		gbc_locoType.gridx = 7;
 		gbc_locoType.gridy = 0;
 		panel_1.add(locoType, gbc_locoType);
 		locoType.setFocusable(false);
@@ -139,7 +140,7 @@ public class BrakeProblemCalcProviderImpl implements CalcProvider {
 		GridBagConstraints gbc_vehicleType = new GridBagConstraints();
 		gbc_vehicleType.insets = new Insets(0, 0, 5, 5);
 		gbc_vehicleType.fill = GridBagConstraints.HORIZONTAL;
-		gbc_vehicleType.gridx = 8;
+		gbc_vehicleType.gridx = 7;
 		gbc_vehicleType.gridy = 1;
 		panel_1.add(vehicleType, gbc_vehicleType);
 
@@ -174,7 +175,7 @@ public class BrakeProblemCalcProviderImpl implements CalcProvider {
 		GridBagConstraints gbc_locoMass = new GridBagConstraints();
 		gbc_locoMass.insets = new Insets(0, 0, 5, 5);
 		gbc_locoMass.fill = GridBagConstraints.HORIZONTAL;
-		gbc_locoMass.gridx = 8;
+		gbc_locoMass.gridx = 7;
 		gbc_locoMass.gridy = 2;
 		panel_1.add(locoMass, gbc_locoMass);
 		locoMass.setColumns(10);
@@ -210,7 +211,7 @@ public class BrakeProblemCalcProviderImpl implements CalcProvider {
 		GridBagConstraints gbc_tractionMass = new GridBagConstraints();
 		gbc_tractionMass.insets = new Insets(0, 0, 5, 5);
 		gbc_tractionMass.fill = GridBagConstraints.HORIZONTAL;
-		gbc_tractionMass.gridx = 8;
+		gbc_tractionMass.gridx = 7;
 		gbc_tractionMass.gridy = 3;
 		panel_1.add(tractionMass, gbc_tractionMass);
 		tractionMass.setColumns(10);
@@ -245,7 +246,7 @@ public class BrakeProblemCalcProviderImpl implements CalcProvider {
 		GridBagConstraints gbc_brakeInitSpeed = new GridBagConstraints();
 		gbc_brakeInitSpeed.insets = new Insets(0, 0, 5, 5);
 		gbc_brakeInitSpeed.fill = GridBagConstraints.HORIZONTAL;
-		gbc_brakeInitSpeed.gridx = 8;
+		gbc_brakeInitSpeed.gridx = 7;
 		gbc_brakeInitSpeed.gridy = 4;
 		panel_1.add(brakeInitSpeed, gbc_brakeInitSpeed);
 		brakeInitSpeed.setColumns(10);
@@ -280,7 +281,7 @@ public class BrakeProblemCalcProviderImpl implements CalcProvider {
 		GridBagConstraints gbc_brakeLastSpeed = new GridBagConstraints();
 		gbc_brakeLastSpeed.insets = new Insets(0, 0, 5, 5);
 		gbc_brakeLastSpeed.fill = GridBagConstraints.HORIZONTAL;
-		gbc_brakeLastSpeed.gridx = 8;
+		gbc_brakeLastSpeed.gridx = 7;
 		gbc_brakeLastSpeed.gridy = 5;
 		panel_1.add(brakeLastSpeed, gbc_brakeLastSpeed);
 		brakeLastSpeed.setColumns(10);
@@ -333,9 +334,9 @@ public class BrakeProblemCalcProviderImpl implements CalcProvider {
 		internalFrame.getContentPane().add(panel_2, gbc_panel_2);
 		GridBagLayout gbl_panel_2 = new GridBagLayout();
 		gbl_panel_2.columnWidths = new int[] { 130, 0, 169, 0, 0, 0, 117, 169, 0 };
-		gbl_panel_2.rowHeights = new int[] { 28, 28, 28, 0, 0, 0 };
+		gbl_panel_2.rowHeights = new int[] { 28, 28, 28, 28, 0, 0, 0 };
 		gbl_panel_2.columnWeights = new double[] { 0.0, 0.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.0, Double.MIN_VALUE };
-		gbl_panel_2.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE };
+		gbl_panel_2.rowWeights = new double[] { 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE };
 		panel_2.setLayout(gbl_panel_2);
 
 		JLabel lblkmh_5 = new JLabel("制动初速(km/h)");
@@ -422,6 +423,23 @@ public class BrakeProblemCalcProviderImpl implements CalcProvider {
 		gbc_textField_3.gridy = 4;
 		panel_2.add(textField_3, gbc_textField_3);
 		textField_3.setColumns(10);
+		
+		JLabel lblnkn_2 = new JLabel("列车有效制动距离(m)");
+		GridBagConstraints gbc_lblnkn_2 = new GridBagConstraints();
+		gbc_lblnkn_2.anchor = GridBagConstraints.EAST;
+		gbc_lblnkn_2.insets = new Insets(0, 0, 0, 5);
+		gbc_lblnkn_2.gridx = 1;
+		gbc_lblnkn_2.gridy = 5;
+		panel_2.add(lblnkn_2, gbc_lblnkn_2);
+
+		textField_6 = new JTextField();
+		GridBagConstraints gbc_textField_6 = new GridBagConstraints();
+		gbc_textField_6.insets = new Insets(0, 0, 0, 5);
+		gbc_textField_6.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textField_6.gridx = 2;
+		gbc_textField_6.gridy = 5;
+		panel_2.add(textField_6, gbc_textField_6);
+		textField_6.setColumns(10);
 
 		JPanel panel_3 = new JPanel();
 		panel_3.setBorder(new TitledBorder(null, "结果", TitledBorder.LEADING, TitledBorder.TOP, null, null));
@@ -555,6 +573,7 @@ public class BrakeProblemCalcProviderImpl implements CalcProvider {
 
 		JLabel label_1 = new JLabel("列车换算制动率");
 		GridBagConstraints gbc_label_1 = new GridBagConstraints();
+		gbc_label_1.anchor = GridBagConstraints.EAST;
 		gbc_label_1.insets = new Insets(0, 0, 0, 5);
 		gbc_label_1.gridx = 0;
 		gbc_label_1.gridy = 6;
